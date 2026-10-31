@@ -1,6 +1,7 @@
-.env
-/outputs
-/governance_agent/__pycache__
-/.venv
-/workflow_agent/__pycache__
-/csvs
+*
+!./governance_agent/
+!./workflow_agent/
+!./policies/
+!./workflow_agent/
+!requirements.txt
+!README.md
