@@ -1,0 +1,5 @@
+template_id,request_type,example_business_goal,example_capabilities,notes
+WT-001,System Integration,Improve customer support,"data synchronization; ticket auto-creation; contact sync","Integrations connecting two or more existing enterprise systems, e.g. email-to-CRM or CRM-to-helpdesk."
+WT-002,Model Deployment,Automate customer support responses,"AI-generated draft replies; sentiment classification","Deploying a foundation model (LLM) or Copilot-style assistant into a business process."
+WT-003,Process Automation,Reduce manual workload,"auto-routing; approval automation; document generation","Automating an existing manual business process, often reducing the number of human checkpoints."
+WT-004,Access/Permission Change,Expand system access for a team,"new role grants; API access; data export access","Requests that primarily grant new permissions or entitlements rather than introduce new capabilities."

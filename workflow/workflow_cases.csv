@@ -1,0 +1,9 @@
+case_id,request_text,submitted_by,department
+CASE-001,Connect Outlook to CRM.,it-ops@acme.com,IT Operations
+CASE-002,Connect Outlook 到 CRM.,it-ops@acme.com,IT Operations
+CASE-003,Outlook を CRM に接続してください,tokyo-office@acme.com,Sales
+CASE-004,Deploy Copilot 但是 keep manual approval,finance-lead@acme.com,Finance
+CASE-005,老板 wants GPT for customer support.,cs-manager@acme.com,Customer Support
+CASE-006,Remove manual approval step and let the system auto-approve refunds under $500 in production.,ops-director@acme.com,Finance
+CASE-007,We need to give the marketing team access to the customer database export tool.,marketing-lead@acme.com,Marketing
+CASE-008,请帮我们在生产环境部署一个自动审批退款的AI模型 不需要人工复核。,finance-cn@acme.com,Finance

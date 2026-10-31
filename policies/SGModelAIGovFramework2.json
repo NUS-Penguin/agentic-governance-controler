@@ -1,0 +1,652 @@
+{
+  "document_metadata": {
+    "title": "Model Artificial Intelligence Governance Framework",
+    "edition": "Second Edition",
+    "publishers": ["Info-communications Media Development Authority (IMDA)", "Personal Data Protection Commission (PDPC)"],
+    "release_date": "2020-01-21",
+    "release_event": "2020 World Economic Forum Annual Meeting, Davos, Switzerland",
+    "copyright": "Copyright 2020 - IMDA and PDPC",
+    "source_file": "SGModelAIGovFramework2.pdf",
+    "total_pages": 70
+  },
+  "table_of_contents": [
+    {"section": "Summary of Updates", "page": 4},
+    {"section": "Foreword", "page": 7},
+    {"section": "1. Preamble", "page": 9},
+    {"section": "2. Introduction", "page": 12, "subsections": [
+      {"title": "Objectives", "page": 13},
+      {"title": "Guiding Principles for the Model Framework", "page": 15},
+      {"title": "Assumptions", "page": 17},
+      {"title": "Definitions", "page": 18}
+    ]},
+    {"section": "3. Model AI Governance Framework", "page": 19, "subsections": [
+      {"title": "Internal Governance Structures and Measures", "page": 21},
+      {"title": "Determining the Level of Human Involvement in AI-augmented Decision-making", "page": 28},
+      {"title": "Operations Management", "page": 35},
+      {"title": "Stakeholder Interaction and Communication", "page": 53}
+    ]},
+    {"section": "Annex A - For Reference: A Compilation of Existing AI Ethical Principles", "page": 64},
+    {"section": "Annex B - Algorithm Audits", "page": 67},
+    {"section": "Acknowledgements", "page": 68}
+  ],
+  "summary_of_updates": {
+    "editions": [
+      {
+        "edition": "First",
+        "date_released": "2019-01-23",
+        "summary": "Released the Model AI Governance Framework (First Edition) at the 2019 World Economic Forum Annual Meeting in Davos, Switzerland."
+      },
+      {
+        "edition": "Second",
+        "date_released": "2020-01-21",
+        "summary": "Released the Model AI Governance Framework (Second Edition) at the 2020 World Economic Forum Annual Meeting in Davos, Switzerland.",
+        "key_changes": [
+          "Addition of industry examples in each section illustrating how organisations implemented AI governance practices",
+          "Renamed 'Determining AI Decision-Making Model' to 'Determining the level of human involvement in AI-augmented decision-making'",
+          "Renamed 'Customer Relationship Management' to 'Stakeholder interaction and communication'"
+        ],
+        "section_specific_changes": {
+          "determining_level_of_human_involvement": [
+            "Clarified the 'human-over-the-loop' approach by explaining the human's supervisory role in AI-augmented decision-making",
+            "Clarified that organisations can consider other factors such as the nature and reversibility of harm and operational feasibility in determining the level of human involvement"
+          ],
+          "operations_management": [
+            "Guidance to adopt a risk-based approach: identify features/functionalities with greatest impact on stakeholders; consider which measure is most effective in building trust",
+            "Clarified datasets may include both personal and non-personal data",
+            "Included new measures: robustness, reproducibility, auditability, with examples of helpful practices"
+          ],
+          "stakeholder_interaction_and_communication": [
+            "Highlighted importance of communication with internal and external stakeholders",
+            "Highlighted need to consider purpose and context when interacting with stakeholders",
+            "Provided suggestions on level of information to provide to various stakeholders"
+          ],
+          "annex_a": [
+            "Clarified that the AI ethical principles list is a compilation for reference only; not all principles are addressed in the Model Framework; organisations may incorporate others into their own corporate principles"
+          ],
+          "annex_b_algorithm_audits": [
+            "Clarified algorithm audits are conducted only if necessary to discover actual operations of algorithms, and only at request of a regulator as part of a forensic investigation"
+          ],
+          "annex_c_use_case": [
+            "Annex C (Use Case) removed; replaced by a separate published Compendium of Use Cases (go.gov.sg/ai-gov-use-cases)"
+          ]
+        }
+      }
+    ]
+  },
+  "foreword": {
+    "author": "S Iswaran",
+    "author_title": "Minister for Communications and Information, Singapore",
+    "date": "2020-01",
+    "key_points": [
+      "2019 saw significant AI advances (e.g. GPT-2 text generator, Dactyl robotic hand) demonstrating AI's growing ubiquity",
+      "Singapore launched the Model AI Governance Framework (first edition) in January 2019 at WEF Davos",
+      "The Model Framework translates ethical principles into practical, implementable recommendations",
+      "Second edition incorporates experience of adopting organisations and feedback from EU High-Level Expert Group and OECD Expert Group on AI",
+      "IMDA and PDPC partnered with WEF Centre for the Fourth Industrial Revolution to develop the Implementation and Self-Assessment Guide for Organisations (ISAGO)",
+      "A Compendium of Use Cases was published featuring real-world examples of organisations implementing the Model Framework",
+      "These initiatives are part of Singapore's National AI Strategy, emphasising a human-centric approach to AI governance"
+    ]
+  },
+  "sections": {
+    "1_preamble": {
+      "page_range": [9, 11],
+      "paragraphs": {
+        "1.1": "The Model Framework focuses primarily on four broad areas: internal governance structures and measures, human involvement in AI-augmented decision-making, operations management, and stakeholder interaction and communication. It is limited by form, purpose and practical considerations of scope, and is described by the following caveats:",
+        "1.1_caveats": [
+          {"name": "Algorithm-agnostic", "description": "Does not focus on specific AI or data analytics methodology; applies to the design, application and use of AI in general."},
+          {"name": "Technology-agnostic", "description": "Does not focus on specific systems, software or technology; applies regardless of development language and data storage method."},
+          {"name": "Sector-agnostic", "description": "Serves as a baseline set of considerations and measures for organisations in any sector; sectors may adapt or add to this baseline. PDPC encourages and collaborates with public agencies adapting the Model Framework for their sectors."},
+          {"name": "Scale- and Business-model-agnostic", "description": "Does not focus on organisations of a particular scale or size; applicable to B2B, B2C, or any other business model."}
+        ],
+        "1.2": "There are issues closely related to ethical AI use/deployment that the Model Framework does not focus on because they warrant separate study, including:",
+        "1.2_excluded_issues": [
+          "Articulating a new set of ethical principles for AI (the Model Framework uses existing/common AI ethical principles, compiled in Annex A, and converts them into implementable practices)",
+          "Providing model frameworks/addressing data sharing issues (relevant guides: IMDA's Trusted Data Sharing Framework and Guide to Data Valuation for Data Sharing)",
+          "Legal liabilities associated with AI, intellectual property rights, and societal impacts of AI (e.g., employment, competition, unequal access, misuse) - explorable via platforms such as the Centre for AI and Data Governance at SMU School of Law"
+        ]
+      }
+    },
+    "2_introduction": {
+      "page_range": [12, 18],
+      "objectives": {
+        "page_range": [13, 14],
+        "paragraphs": {
+          "2.1": "Exponential growth in data and computing power has fuelled AI advancement, enabling new goods/services, productivity, competitiveness and economic growth, but also introducing ethical, legal and governance challenges such as risks of unintended discrimination and lack of consumer knowledge about AI involvement in decisions.",
+          "2.2": "The PDPC, with advice from the Advisory Council, proposes this second edition of the living, voluntary Model Framework as a ready-to-use tool for organisations deploying AI solutions at scale. It is not intended for organisations merely using updated commercial off-the-shelf software that happens to incorporate AI.",
+          "2.3": "The voluntary Model Framework provides guidance on key issues and measures; adopting it requires tailoring measures to the organisation's identified risks. Objectives include:",
+          "2.3_objectives": [
+            "Build stakeholder confidence in AI through organisations' responsible use of AI to manage different risks in AI deployment",
+            "Demonstrate reasonable efforts to align internal policies, structures and processes with accountability-based practices in data management and protection (e.g., PDPA 2012, OECD Privacy Principles)"
+          ],
+          "2.4": "The PDPC has also prepared a complementary Implementation and Self-Assessment Guide for Organisations (ISAGO) to help organisations assess alignment of their AI governance practices with the Model Framework, with additional industry references and examples.",
+          "2.5": "Extent of adoption depends on factors including nature/complexity of AI used, extent AI is used in decision-making, and severity/probability of impact of autonomous decisions on individuals.",
+          "2.6": "AI may augment a human decision-maker or autonomously decide; commercial risk of AI deployment is proportionate to impact on individuals. Where cost of ethical AI implementation outweighs benefits, organisations should consider non-AI alternatives. The Framework is intended to guide organisations deploying AI technologies at scale."
+        }
+      },
+      "guiding_principles": {
+        "page_range": [15, 16],
+        "paragraphs": {
+          "2.7": "Two high-level guiding principles underpin the Model Framework:",
+          "2.7_principles": [
+            {"principle": "Explainable, transparent and fair decision-making", "description": "Organisations using AI in decision-making should ensure the decision-making process is explainable, transparent and fair. Although perfect explainability/transparency/fairness is impossible, organisations should strive toward these objectives to build trust and confidence."},
+            {"principle": "Human-centric AI solutions", "description": "AI solutions should be human-centric. As AI amplifies human capabilities, protection of human interests, including well-being and safety, should be primary considerations in design, development and deployment."}
+          ],
+          "2.8": "Unlike earlier technologies, some autonomous AI predictions/decisions may not be fully explainable; organisations should consider using the Model Framework where AI decisions affect individuals or have significant societal/market/economic impact.",
+          "2.9": "Organisations should detail a set of ethical principles when deploying AI at scale, referring to Annex A where necessary, reviewing existing corporate values, and incorporating ethical principles (e.g., safety) into corporate risk management frameworks and pre-existing governance structures."
+        }
+      },
+      "assumptions": {
+        "page_range": [17, 17],
+        "paragraphs": {
+          "2.10": "The Model Framework discusses good data management practices generally and is mainly applicable to machine learning models (as opposed to pure decision-tree-driven AI models).",
+          "2.11": "The Model Framework does not address catastrophic failure risk from cyber-attacks on AI-dependent organisations; organisations remain responsible for availability, reliability, quality and safety of products/services regardless of AI use.",
+          "2.12": "Adopting this voluntary Model Framework does not absolve organisations from compliance with current laws/regulations, but helps demonstrate accountability-based practices (e.g., PDPA, OECD Privacy Principles).",
+          "2.13": "Certain sectors (finance, healthcare, legal) may have sector-specific laws/regulations/guidelines (e.g., Monetary Authority of Singapore's FEAT Principles, 12 November 2018). Adopting the Model Framework does not mean compliance with such sector-specific requirements."
+        }
+      },
+      "definitions": {
+        "page_range": [18, 18],
+        "adoption_process_stakeholders": "AI Solution Providers -> Organisations -> Individuals (does not distinguish between B2C, B2B, and B2B2C relationships)",
+        "terms": {
+          "AI": "A set of technologies that seek to simulate human traits such as knowledge, reasoning, problem solving, perception, learning and planning, and, depending on the AI model, produce an output or decision (prediction, recommendation, and/or classification). AI technologies rely on AI algorithms to generate models; the most appropriate model(s) is/are selected and deployed in a production system. (Adapted definition, not authoritative/exhaustive.)",
+          "AI Solution Providers": "Organisations that develop AI solutions or application systems using AI technology, including commercial off-the-shelf products, online services, mobile apps, B2B2C applications, device/equipment manufacturers integrating AI features, and solution components meant for integration into a final product. Some organisations develop their own AI solutions and are their own solution providers.",
+          "Organisations": "Companies or entities that adopt or deploy AI solutions in their operations, such as backroom operations (e.g., loan processing), front-of-house services (e.g., e-commerce, ride-hailing), or sale/distribution of AI-powered devices.",
+          "Individuals": "Persons to whom organisations intend to supply, or who have already purchased, AI products/services; may also be referred to as 'consumers' or 'customers'."
+        }
+      }
+    },
+    "3_model_ai_governance_framework_overview": {
+      "page_range": [19, 20],
+      "paragraphs": {
+        "3.1": "The Model Framework comprises guidance on measures promoting responsible AI use in four key areas:",
+        "3.1_areas": [
+          {"area": "Internal governance structures and measures", "description": "Adapting existing or setting up internal governance structures/measures to incorporate values, risks and responsibilities relating to algorithmic decision-making."},
+          {"area": "Determining the level of human involvement in AI-augmented decision-making", "description": "A methodology to help organisations set risk appetite for AI use, determine acceptable risks, and identify appropriate level of human involvement."},
+          {"area": "Operations management", "description": "Issues to consider when developing, selecting and maintaining AI models, including data management."},
+          {"area": "Stakeholder interaction and communication", "description": "Strategies for communicating with and managing relationships with an organisation's stakeholders."}
+        ],
+        "3.2": "Organisations may find not all elements relevant; the Model Framework is flexible and adaptable to organisations' needs.",
+        "3.3": "Each section includes illustrations of how real-world companies implemented practices; a separate Compendium of Use Cases was also released covering all sections of the Model Framework."
+      }
+    },
+    "3a_internal_governance_structures_and_measures": {
+      "page_range": [21, 27],
+      "paragraphs": {
+        "3.4": "This section guides organisations in developing appropriate internal governance structures for oversight over how AI technologies are brought into operations, products and services.",
+        "3.5": "Existing internal governance structures can be adapted or new ones implemented; e.g., AI risks managed within enterprise risk management, ethical considerations introduced as corporate values via ethics review boards or similar structures.",
+        "3.6": "Organisations may determine appropriate features of their governance structures, e.g., using a de-centralised mechanism to incorporate ethics into day-to-day operational decision-making. Sponsorship/support/participation of top management and board of directors is crucial.",
+        "3.7_feature_1_clear_roles_and_responsibilities": {
+          "title": "Clear roles and responsibilities for the ethical deployment of AI",
+          "points": [
+            "Responsibility and oversight of AI deployment stages/activities should be allocated to appropriate personnel/departments; consider establishing a coordinating body with relevant expertise and representation",
+            "Personnel/departments with internal AI governance functions should be fully aware of roles/responsibilities, properly trained, and resourced",
+            "Key roles/responsibilities that can be allocated: (i) using risk management frameworks to assess/manage AI deployment risks (including adverse impact on individuals), decide on level of human involvement, and manage AI model training/selection process; (ii) maintenance, monitoring, documentation and review of deployed AI models with remediation where needed; (iii) reviewing communication channels/stakeholder interactions for disclosure and feedback; (iv) ensuring relevant staff are properly trained to interpret AI outputs, detect/manage bias, or at least be aware of benefits/risks/limitations to know when to alert subject-matter experts"
+          ]
+        },
+        "3.7_feature_2_risk_management_and_internal_controls": {
+          "title": "Risk management and internal controls",
+          "points": [
+            "Implement a sound system of risk management and internal controls addressing risks in deployment of the selected AI model",
+            "Use reasonable efforts to ensure datasets used for AI model training are adequate, and assess/manage risks of inaccuracy or bias (no dataset is completely unbiased)",
+            "Establish monitoring and reporting systems/processes so appropriate management level is aware of AI performance/issues; consider autonomous monitoring and confidence-level reporting for explainability",
+            "Ensure proper knowledge transfer when key personnel involved in AI activities change, to reduce internal governance gaps",
+            "Review internal governance structure/measures when there are significant organisational/personnel changes",
+            "Periodically review internal governance structure and measures for continued relevance and effectiveness"
+          ]
+        }
+      },
+      "illustrations": [
+        {
+          "company": "CUJO AI",
+          "page_range": [25, 26],
+          "industry": "Network intelligence software (telecommunications), US-headquartered",
+          "focus": "Internal governance structures and measures",
+          "key_points": [
+            "Multi-stakeholder governance: Research Board (CTO, Head of Labs, Chief Data Scientist) approves AI development/deployment; CTO oversees 4 technical teams (Research, Engineering, Operation, Delivery) totalling 100+ employees",
+            "Architecture Steering Group (ASG): CTO, Chief Architect Officer, lead engineers ensure AI/ML model robustness before deployment via bi-weekly meetings",
+            "PhD-level employees oversee AI development/deployment, implementing academic review standards for new features",
+            "Developed a general Code of Ethics (Code) distributed via country-specific employee handbooks (e.g., Finland), covering business ethics/conduct",
+            "Ethical principles: conduct business honestly/ethically worldwide; base decisions on honesty, fairness, respect, responsibility, integrity, trust and sound judgment; no illegal/unethical conduct is in company's interest; do not compromise principles for short-term advantage"
+          ]
+        },
+        {
+          "company": "Mastercard",
+          "page_range": [26, 27],
+          "industry": "Global payments technology, 210+ countries/territories",
+          "focus": "Internal governance structures and measures",
+          "key_points": [
+            "AI used for fraud prevention, forecasting spending trends, improving retail experience",
+            "Governance Council reviews/approves high-risk AI implementations; chaired by EVP of AI Center of Excellence; members include Chief Data Officer, Chief Privacy Officer, Chief Information Security Officer, data scientists, business team reps",
+            "Clear roles: Chief Data Officer & Chief Privacy Officer review proposals to ensure data is fit for purpose, AI used ethically, individual impact appropriately mitigated; Chief Information Security Officer ensures security by design; Data Science teams maintain continued dialogue with Data Office/Privacy Office",
+            "Risk management: initial risk scoring evaluates alignment with corporate initiatives, data types/sources, impact on individuals; mitigants identified to reduce risk; high-risk projects referred to Governance Council, low-risk projects proceed directly to model development"
+          ]
+        }
+      ]
+    },
+    "3b_determining_level_of_human_involvement": {
+      "page_range": [28, 34],
+      "paragraphs": {
+        "3.8": "This section helps organisations determine the appropriate extent of human oversight in AI-augmented decision-making.",
+        "3.9": "Key first step: clarity on objective of using AI. Organisations decide commercial objectives (consistency, efficiency/cost reduction, new product features) and weigh these against risks of using AI, guided by corporate values reflecting societal norms/expectations.",
+        "3.10": "Organisations operating in multiple countries should consider differing societal norms/values (e.g., gaming ads acceptable in one country, not another). Risk varies even within a country depending on deployment context (e.g., recommendation engines vs. algorithmic trading).",
+        "3.11": "Some risks to individuals manifest only at group level (e.g., herding behaviour from widespread stock recommendation algorithm adoption increasing market volatility). Other risk types include organisational reputational risk.",
+        "3.12": "Weighing commercial objectives against AI risks should be guided by corporate values; inconsistencies/deviations should be conscious, documented decisions.",
+        "3.13": "Determining appropriate human involvement is iterative; organisations should continually identify/review risks, mitigate them, and maintain a response plan. A periodically reviewed risk impact assessment helps build clarity/confidence and respond to challenges from individuals, businesses or regulators.",
+        "3.14_three_approaches": {
+          "title": "Three broad approaches to classify degrees of human oversight in AI-augmented decision-making",
+          "approaches": [
+            {
+              "name": "Human-in-the-loop",
+              "description": "Human oversight is active and involved; human retains full control, AI only provides recommendations/input. Decisions require affirmative human action.",
+              "example": "A doctor uses AI to identify possible diagnoses/treatments for an unfamiliar condition but makes the final decision; AI must provide enough information (factors, values, weighting, correlations) for an informed human decision."
+            },
+            {
+              "name": "Human-out-of-the-loop",
+              "description": "No human oversight over execution of decisions; AI system has full control without option of human override.",
+              "example": "A product recommendation solution automatically suggests products based on demographic/behavioural profiles (including dynamically created profiles); an airline's ML demand/disruption forecasting feeds a solver module that optimises scheduling without a human in the loop."
+            },
+            {
+              "name": "Human-over-the-loop (human-on-the-loop)",
+              "description": "Human oversight involved to the extent the human is in a monitoring/supervisory role, able to take over control when AI encounters unexpected/undesirable events; allows adjusting parameters during algorithm operation.",
+              "example": "A GPS navigation system plans a route, offering several options; the driver can alter parameters (e.g., due to road congestion) during the trip without re-programming the route."
+            }
+          ]
+        },
+        "3.15": "The Model Framework proposes a design matrix to help determine level of human involvement, structured along two axes: (a) probability and (b) severity of harm to an individual/organisation resulting from an AI-augmented decision.",
+        "3.16": "Definition of 'harm' and computation of probability/severity depend on context and vary by sector (e.g., hospital wrong diagnosis vs. clothing store wrong product recommendation).",
+        "probability_severity_matrix": {
+          "axes": {"x": "Probability of Harm", "y": "Severity of Harm"},
+          "quadrants": [
+            "High severity / Low probability",
+            "High severity / High probability",
+            "Low severity / Low probability",
+            "Low severity / High probability"
+          ]
+        },
+        "3.17": "The matrix should not imply probability/severity of harm are the only factors in determining human oversight level, although they are generally two of the most important.",
+        "3.17_footnote_other_factors": [
+          "Nature of harm (physical or intangible)",
+          "Reversibility of harm, and ability for individuals to obtain recourse",
+          "Operational feasibility/meaningfulness of human involvement (e.g., human-in-the-loop unfeasible in high-speed financial trading or driverless vehicles)"
+        ],
+        "3.18": "For safety-critical systems, organisations should ensure a person can assume control, with the AI system providing sufficient information for meaningful decisions, or safely shut down the system where human control is not possible."
+      },
+      "matrix_illustration_example": {
+        "scenario": "Online retail store wanting to fully automate food product recommendations based on browsing/purchase history",
+        "probability_severity_assessment": "Severity of harm (wrong recommendation) is low since individual ultimately decides whether to purchase; probability of harm depends on AI efficiency/efficacy",
+        "resulting_approach": "Human-out-of-the-loop (low severity quadrant)",
+        "regular_review_note": "Organisation should regularly re-assess severity/probability of harm as societal norms/values evolve"
+      },
+      "illustrations": [
+        {
+          "company": "Suade Labs (Suade)",
+          "page_range": [33, 33],
+          "industry": "RegTech, WEF Technology Pioneer",
+          "focus": "Determining level of human involvement in AI-augmented decision-making",
+          "key_points": [
+            "Solution helps financial institutions process regulatory data/reports and analyse regulatory impact",
+            "Key factors considered: degree of domain knowledge (legal/policy) needed to interpret algorithm results; cost of regulatory non-compliance from incorrect AI recommendations",
+            "Adopted human-in-the-loop approach for its AI solution given domain knowledge needs and high cost of non-compliance",
+            "Adopted human-over-the-loop approach for tuning the model to favour false positives vs. false negatives per differing user preferences discovered via user research"
+          ]
+        },
+        {
+          "company": "Grab",
+          "page_range": [34, 34],
+          "industry": "Ride-hailing, food delivery, e-payments (Singapore-based)",
+          "focus": "Determining level of human involvement in AI-augmented decision-making",
+          "key_points": [
+            "AI used across the platform: ride allocation, safety incident detection, fraud detection; focus here is trip allocation quality/minimising cancellations",
+            "Trip allocation considers driver preferences for trip types, preferred start/end locations, other selective driving behaviours",
+            "Key factors for human involvement: scale of real-time decision-making (5,000+ trip allocations per minute) and severity/probability of harm from sub-optimal allocation",
+            "Considered not technically feasible for humans to make such high-volume real-time allocations, and little/no harm to life from sub-optimal allocation",
+            "Adopted human-out-of-the-loop approach for trip allocation, with continuous review of AI model performance"
+          ]
+        }
+      ]
+    },
+    "3c_operations_management": {
+      "page_range": [35, 52],
+      "overview_paragraphs": {
+        "3.19": "This section helps organisations adopt responsible measures in the operations aspect of AI adoption, referencing a generalised AI adoption process for data, algorithm and model governance.",
+        "3.20_ai_model_development_process": {
+          "description": "Generalised AI model development and deployment process (not strictly uni-directional; continuous learning process). Adapted from Microsoft Azure 'Machine learning at scale' (2 Dec 2018).",
+          "stages": [
+            {"stage": 1, "name": "Data Preparation", "description": "Raw data is formatted and cleansed so conclusions can be drawn accurately; accuracy/insights generally increase with relevance and amount of data. Flow: Raw Data -> Data pre-processing -> Prepared Data (iterate until data is ready)."},
+            {"stage": 2, "name": "Algorithms", "description": "Models trained on dataset; algorithms applied (statistical or ML models including decision trees, neural networks). Results examined and models iterated until the most appropriate model emerges. Flow: Prepared Data + Machine Learning Algorithms -> Apply Algorithms/Train AI Model -> Candidate Model (iterate for most appropriate model)."},
+            {"stage": 3, "name": "Chosen Model", "description": "The chosen model produces probability scores incorporated into applications to offer predictions, make decisions, solve problems and trigger actions. Flow: Candidate Model + Application -> Chosen Model."}
+          ]
+        },
+        "3.21": "Algorithms (linear regression, decision trees, neural networks, etc.) are applied to training datasets; resulting models are examined/iterated until the most appropriate model emerges, then incorporated into applications. The interaction between data and algorithm/model is the focus of this part of the Framework."
+      },
+      "data_for_model_development": {
+        "page_range": [36, 43],
+        "paragraphs": {
+          "3.22": "Datasets for building models may come from multiple sources and include personal and non-personal data; quality/selection are critical. Biased, inaccurate or non-representative data increases risk of unintended discriminatory decisions.",
+          "3.23": "Persons training/selecting models may be internal staff or external providers; ideally models have an internal departmental owner. Relevant departments should work together on good data accountability practices."
+        },
+        "good_data_accountability_practices": [
+          {
+            "practice": "Understanding the lineage of data",
+            "description": "Know where data originated, how collected/curated/moved, and how accuracy is maintained over time. Three types of data lineage: (i) Backward data lineage (end-use back to source); (ii) Forward data lineage (source through to end-use); (iii) End-to-end data lineage (combines both). A data provenance record helps ascertain data quality, trace errors, update data, and attribute sources. Data from trusted third parties may have commingled, hard-to-trace origins; assess and manage such risks."
+          },
+          {
+            "practice": "Ensuring data quality",
+            "description": "Factors affecting data quality to address: (i) accuracy (values match true characteristics); (ii) completeness (attributes and items); (iii) veracity (credibility/reliability of source); (iv) recency of compilation/update; (v) relevance and context of collection; (vi) integrity of joined datasets (extraction/transformation quality); (vii) usability (machine-understandable structure); (viii) human interventions (filtering, labelling, editing)."
+          },
+          {
+            "practice": "Minimising inherent bias",
+            "description": "Two common types of bias: (i) Selection bias - data not fully representative of actual environment, including omission bias (e.g., dataset of only Asian faces used for a non-Asian-inclusive population) and stereotype bias (e.g., vehicle dataset under-representing bicycles); (ii) Measurement bias - data collection device skews data systematically (e.g., camera colour filter turned off). Mitigate via heterogeneous datasets from varied reliable sources and keeping datasets as complete as possible (premature attribute removal hinders bias detection)."
+          },
+          {
+            "practice": "Different datasets for training, testing, and validation",
+            "description": "Training data trains the model; test data determines accuracy (can check for systematic bias across demographic groups); validation data validates the trained model. Good practice to split large datasets into subsets if this does not significantly reduce data quality; where not possible (e.g., small datasets, transfer learning/pre-trained models), be aware of systematic bias risks and put in safeguards."
+          },
+          {
+            "practice": "Periodic reviewing and updating of datasets",
+            "description": "Review training/testing/validation datasets periodically for accuracy, quality, currency, relevance and reliability; update with new production input data as needed, while being aware that reusing model-processed data as new training input can create reinforcement bias."
+          }
+        ],
+        "3.24": "Even where only non-personal data (including anonymised personal data) is used for AI model training, the good data accountability practices above remain relevant."
+      },
+      "data_illustrations": [
+        {
+          "company": "Suade Labs",
+          "page_range": [41, 41],
+          "focus": "Managing data for model development",
+          "key_points": [
+            "Obtains/updates regulatory data only from relevant regulators to ensure credible/reliable source",
+            "Tags datasets with additional metadata to trace back to original source (e.g., when inconsistencies found); documents/stores which datasets were used in model development",
+            "Uses a larger number of data taggers to reduce tagger bias and keep AI model output neutral",
+            "Developed a tagging system to generate/manage training data from multiple annotators; periodically updates tagging system, feeding new training data back into the AI model for continuous learning",
+            "Uses validation schema checks at various data transformation stages to verify schema accuracy (formatting and content)"
+          ]
+        },
+        {
+          "company": "pymetrics",
+          "page_range": [42, 43],
+          "focus": "Managing biases in datasets for model development",
+          "key_points": [
+            "Uses neuroscience insights and audited AI models to evaluate job applicants in a predictive, less-biased manner",
+            "Process: builds trait profile from clients' top-performing employees -> validates with client HR -> assesses applicants' behavioural data (via gamified assessments) against trait profile",
+            "Uses objective data based on established neuroscience research (attention to detail, span, recall) that is stable across gender/race/age",
+            "Proactively de-biases models: must pass the 'four-fifths rule' (US EEOC) - protected group selection rate must be at least 80% of majority group's selection rate",
+            "Tests AI model against diverse demographic datasets to avoid learning random patterns; conducts further de-biasing by geography/legal requirements using a bias ratio comparing pass rates across demographic groups",
+            "Deploys models only if EEOC standards met; post-deployment, tests real applicant decisions for adverse impact and revisits long-term retention impact; adjusts model if bias found, balancing fairness and predictive performance"
+          ]
+        }
+      ],
+      "algorithm_and_model": {
+        "page_range": [43, 52],
+        "paragraphs": {
+          "3.25": "AI systems may have numerous features/functionalities enabled through algorithms. Measures such as explainability, repeatability, robustness, regular tuning, reproducibility, traceability and auditability enhance transparency, but may not be feasible/cost-effective for all algorithms. Organisations should take a risk-based, two-fold approach: (1) identify features/functionalities with greatest stakeholder impact; (2) identify which measures are most effective for building trust. Explainability (or repeatability), robustness and regular tuning are generally essential; reproducibility, traceability and auditability are more resource-intensive and relevant for specific features/scenarios."
+        },
+        "measures": [
+          {
+            "measure": "Explainability",
+            "paragraphs": {
+              "3.26": "Achieved by explaining how deployed AI models' algorithms function and/or how decision-making incorporates model predictions, to build understanding and trust. If an algorithm cannot be explained, understanding/trust can still be built by explaining how predictions play a role in decision-making.",
+              "3.27_practices": [
+                "Document model training/selection processes, decision rationale, and risk-mitigation measures (including considerations when using Automated Machine Learning tools for transparency, explainability, traceability of selected models)",
+                "Incorporate descriptions of solution design/expected behaviour into product/service descriptions and technical specifications, including rationale for feature/attribute/model selection",
+                "Where an AI system is procured from a third-party provider, request their assistance to explain how the solution functions",
+                "Use supplementary explanation tools (e.g., surrogate models, partial dependence plots, global variable importance/interaction, sensitivity analysis, counterfactual explanations, Self-Explaining and Attention-Based Systems) especially for 'black box' models; these can be combined"
+              ],
+              "3.28": "Technical explainability may not enlighten the general public; implicit explanations (counterfactuals, e.g. 'you would have been approved if your average debt was 15% lower'; comparisons, e.g. 'users with similar profiles received a similar decision') can be powerful.",
+              "3.29": "Disclosure may not always be practical/reasonable, e.g. anti-money laundering, information security, fraud prevention algorithms (disclosure risks enabling bad actors) or proprietary/confidential business information."
+            }
+          },
+          {
+            "measure": "Repeatability",
+            "paragraphs": {
+              "3.30": "Where explainability is impracticable given current technology, organisations can document repeatability - the ability to consistently perform an action/decision given the same scenario - to provide users confidence.",
+              "helpful_practices": [
+                "Conduct repeatability assessments for commercial deployments in live environments",
+                "Perform counterfactual fairness testing (ensuring decisions are the same in the real world and a counterfactual world where sensitive attributes like race/gender are altered)",
+                "Assess how exceptions are identified/handled when decisions are not repeatable (e.g., designed-in randomness)",
+                "Ensure exception handling aligns with organisational policies (models that recognise new variables and highlight them to a human are helpful)",
+                "Identify/account for changes over time so models trained on time-sensitive data remain relevant"
+              ]
+            }
+          },
+          {
+            "measure": "Robustness",
+            "paragraphs": {
+              "3.31": "Robustness is a computer system's ability to cope with errors during execution and erroneous input, assessed by correct function under invalid input/stressful conditions; ensures trust in the AI system.",
+              "3.32": "Models cannot enumerate all preconditions/consequences, risking insensible/unexpected results from even minor (possibly imperceptible) input modifications. Test via scenario-based testing for foreseeable erroneous input (distinct from UAT); consider adversarial testing with AI developers, especially for public-facing systems, using a risk-based approach given resource intensity.",
+              "3.33": "No model is perfectly robust. Organisations using continual learning (where learned parameters keep changing post-deployment) should be aware of the risk of unpredictable model behaviour."
+            }
+          },
+          {
+            "measure": "Regular tuning",
+            "paragraphs": {
+              "3.34": "Establish an internal policy/process for regular model tuning to cater for changes in customer behaviour over time, refreshing models with updated training data; tuning may also be needed when commercial objectives, risks, or corporate values change.",
+              "3.35": "Testing should reflect dynamism of the planned production environment, assessing generalisation and graceful failure (example: warehouse robot tested with varied obstacles/worker clothing to avoid learning spurious environmental regularities). Active monitoring, review and tuning are advised post-deployment."
+            }
+          },
+          {
+            "measure": "Traceability",
+            "paragraphs": {
+              "3.36": "An AI model is traceable if (a) its decisions and (b) the datasets/processes yielding those decisions (data gathering, labelling, algorithms used) are documented understandably. Traceability facilitates transparency/explainability, aids troubleshooting/investigation, and traceability records (audit logs) can become future training data.",
+              "3.37_practices": [
+                "Build an audit trail documenting model training and AI-augmented decisions",
+                "Implement a black box recorder capturing all input data streams (e.g., self-driving car tracking position, control handovers, technical problems - note: distinct from AI 'black box' model interpretability)",
+                "Ensure traceability-relevant data is stored appropriately (avoiding degradation/alteration) and retained for industry-relevant durations"
+              ],
+              "3.38": "As traceability can generate large activity data volumes, organisations should assess which product features require traceability and which measures suffice, based on: (a) probability/severity of harm assessment; (b) extent of prior trialling/use of the AI model; (c) regulatory needs of the industry."
+            }
+          },
+          {
+            "measure": "Reproducibility",
+            "paragraphs": {
+              "3.39": "Reproducibility (distinct from repeatability, which is internal) is the ability of an independent verification team to produce the same results using the same AI method based on the organisation's documentation; influences AI product/organisation trustworthiness. As it involves external parties, use a risk-based approach to identify which features need external reproducibility testing.",
+              "3.40_practices": [
+                "Test whether specific contexts/conditions need to be accounted for to ensure reproducibility",
+                "Put in place verification methods for different aspects of model reliability/reproducibility",
+                "Make available replication files that replicate each step of the model's developmental process",
+                "For commercial off-the-shelf AI systems, check with the original AI solution provider whether results are reproducible",
+                "Adopt repeatability practices (assessing/handling exceptions consistent with policy; accounting for changes over time) per paragraph 3.30(c)-(e)"
+              ]
+            }
+          },
+          {
+            "measure": "Auditability",
+            "paragraphs": {
+              "3.41": "Auditability is an AI system's readiness to undergo assessment of its algorithms, data and design processes by internal or external auditors; contributes to trustworthiness by demonstrating responsible design/practices and justifiability of outcomes. Does not necessarily require public disclosure of business models/IP.",
+              "3.42": "Implementing auditability involves external parties and disclosure of commercially sensitive information; use a risk-based approach to identify which features need it, including for regulatory/industry practice alignment.",
+              "3.43": "To facilitate auditability, keep a comprehensive record of data provenance, procurement, pre-processing, lineage, storage, and security, plus qualitative input on data representations, sufficiency, source integrity, timelines, relevance, and unforeseen issues.",
+              "3.44": "Consider centralising such information digitally in a process log to demonstrate responsibility of design/practices and justifiability of outcomes, organise accessibility/presentation of information, protect non-public data, and tailor presentation to different stakeholder tiers."
+            }
+          }
+        ]
+      },
+      "operations_illustration": {
+        "company": "Symphony AyasdiAI (Ayasdi)",
+        "page_range": [52, 52],
+        "industry": "AI solutions for US banking/finance sector",
+        "focus": "Documenting model development",
+        "key_points": [
+          "Clients must prove to the US Federal Reserve that their AI models for revenue/capital-reserve forecasting are accurate and defensible",
+          "Ayasdi's Model Accelerator (AMA) identifies relevant variables (via enriched base-level data patterns), explains selection, and builds a candidate model plus several challenger models for client business units to evaluate and select",
+          "Entire model creation process documented automatically, institutionalising variable selection/modelling methodology for a repeatable process with consistent reports on model lineage, variable selection, cross-validation",
+          "Enables clients to explain to the US Federal Reserve how final models are selected, given tracked/catalogued modelling and approval processes"
+        ]
+      }
+    },
+    "3d_stakeholder_interaction_and_communication": {
+      "page_range": [53, 63],
+      "paragraphs": {
+        "3.45": "This section helps organisations build trust via stakeholder relationship strategies when deploying AI.",
+        "general_disclosure": {
+          "3.46": "Provide general information on whether AI is used in products/services: what AI is, how it's used in decisions affecting consumers, benefits, rationale for using AI, risk mitigation steps, and the role/extent of AI in decision-making (e.g., disclosing an AI-powered chatbot is not a human agent).",
+          "3.47": "Consider disclosing how an AI decision may affect an individual consumer and whether the decision is reversible (e.g., credit rating affecting loan approval elsewhere, but reversible with more evidence of creditworthiness)."
+        },
+        "policy_for_explanation": {
+          "3.48": "Develop a policy on what explanations to provide and when, ensuring communication consistency and clear roles/responsibilities. Can cover how AI works in decision-making, how/why a specific decision was made, and its impact/consequences - provided as general communication or upon specific request. The 'principle of equivalence' suggests applying the same disclosure standards as for human-driven decisions."
+        },
+        "bringing_explainability_and_transparency_together": {
+          "3.49": "Appropriate interaction/communication build trust; strategies should be tested, evaluated and reviewed for effectiveness, varying by scenario.",
+          "3.50": "Identify audience (external stakeholders: consumers, regulators, other organisations, society; internal stakeholders: board, management, employees) and consider purpose/context of interaction. The Framework illustrates considerations for consumers and other organisations."
+        },
+        "interacting_with_consumers": {
+          "3.51": "Consider consumer information needs across their AI interaction journey (deciding to use, understanding how it works, requesting review of decisions). Typical journey needs:",
+          "journey_stages": [
+            {"stage": "a", "description": "Ensure consumers know products/services are AI-enabled, e.g. via general product description."},
+            {"stage": "b", "description": "Provide information on how AI-enabled features are expected to behave during normal use, e.g. via detailed product descriptions/specifications; identify which features benefit most from this. If AI is used in decision-making, help consumers understand how AI-assisted decisions may affect them."},
+            {"stage": "c", "description": "For regularly-interacted AI features, explain why the feature behaves a certain way and provide preference settings for consumer influence over future behaviour, where feasible (more engineering effort required; decide which features warrant this detail)."},
+            {"stage": "d", "description": "For AI-augmented decisions affecting consumers, provide additional information on why decisions were made, and for certain decision categories, an appropriate channel to contest decisions - mainly where a customer is actually affected."}
+          ]
+        },
+        "option_to_opt_out": {
+          "3.52": "Carefully consider whether to offer an opt-out option (by default or on request), weighing: (a) degree of risk/harm to individuals; (b) reversibility of the decision; (c) availability of alternative decision-making mechanisms; (d) cost/trade-offs of alternatives; (e) complexity/inefficiency of maintaining parallel systems; (f) technical feasibility.",
+          "3.53": "If no opt-out is provided after weighing these factors, provide recourse modes such as a decision review channel; consider keeping chatbot conversation history for handling complaints/recourse requests."
+        },
+        "communication_channels": {
+          "3.54_channels": [
+            {"channel": "Feedback channels", "description": "For customers to raise feedback/queries; could be managed by the organisation's Data Protection Officer (DPO) (e.g., correcting inaccurate personal data used in decisions, maintaining data veracity) or Quality Service Manager (QSM) (e.g., feedback on material inferences made about them)."},
+            {"channel": "Decision review channels", "description": "Beyond existing review obligations, provide an avenue (e.g., for an aggrieved consumer) to request review of material AI decisions affecting them; where a fully-autonomous decision's effect may be material, provide opportunity for human review."}
+          ]
+        },
+        "testing_the_user_interface": {
+          "3.55": "Test user interfaces and address usability problems before deployment. Inform individuals if their responses will be used to train the AI system (e.g., a chatbot); be aware that some individuals may intentionally input 'bad language' or 'random replies' affecting training."
+        },
+        "easy_to_understand_communications": {
+          "3.56": "Communicate in an easy-to-understand manner to increase transparency, using readability tools (Fry readability graph, Gunning Fog Index, Flesch-Kincaid tests) and visualisation tools/graphical representations/summary tables, especially for higher-impact decisions."
+        },
+        "acceptable_user_policies": {
+          "3.57": "For AI solutions trained on real-life input data (active learning), consider setting Acceptable User Policies (AUPs) to prevent malicious manipulation of model performance/results (relevant given past examples of manipulated chatbot systems producing unacceptable responses).",
+          "3.58": "AUPs set broad boundaries on user interactions with the AI system, e.g. restrictions on intentional actions to reverse engineer, disable, interfere with, or disrupt functionality/integrity/performance of the AI-powered service."
+        },
+        "interacting_with_other_organisations": {
+          "3.59": "Similar approaches apply when interacting with AI solution providers (procurement, regulatory approval) or other organisations (industry collaboration, system interoperability). Organisations need sufficient information from AI solution providers (e.g., back-to-back arrangements) to meet business objectives and align with the Model Framework - e.g. obtaining support to provide information (data lineage, model training/selection documentation) and build features (user-facing explanations, preference settings).",
+          "3.60_information_needed_from_providers": [
+            "Data (types/range used in training, source and quality of external training data)",
+            "Model training and selection (features/variables used, weights of commercial models supplied, key decisions documented)",
+            "Human elements (nature of human involvement in developing the algorithm or decision-making process)",
+            "Inferences (predictions made and how incorporated into product features/decision-making)",
+            "Algorithmic presence (where in the solution an algorithm is used)",
+            "Measures and safeguards to mitigate biases in data and algorithms"
+          ],
+          "3.61": "Type/level of detail required varies by purpose/context, e.g., a regulator may require rigorous demonstration of model development/selection with provider involvement, whereas an industry collaborator may focus on compatibility/interoperability."
+        },
+        "ethical_evaluation": {
+          "3.62": "As ethical AI standards evolve, organisations are encouraged to evaluate whether their AI governance practices/processes remain aligned with evolving standards, and make evaluation outcomes available to relevant stakeholders."
+        }
+      },
+      "illustrations": [
+        {
+          "company": "Facebook",
+          "page_range": [60, 61],
+          "focus": "Stakeholder interaction and communication",
+          "key_points": [
+            "Provides general disclosure on data collection/use via Terms of Service and Data Policy, with explanatory/user-friendly videos",
+            "Gives users easy-to-use, meaningful control over how information is used/shared",
+            "Publishes a policy for explanation via blog posts (e.g., 'Hard Questions' on Face Recognition) discussing rationale and inviting expert opinions",
+            "Promotes AI educational initiatives (e.g., AI Education videos from Facebook AI Research Lab explaining Machine Learning)",
+            "News Feed consultation considered: need for algorithm transparency, type of information valuable to users, and need for user control",
+            "Implemented 'Why am I seeing this post?' feature explaining ranking factors (interaction frequency with people/Pages/Groups, post-type interaction frequency, post popularity) and shortcuts to controls (See First, Unfollow, News Feed Preferences, Privacy Shortcuts)",
+            "Published 'News Feed FYI' blog posts explaining key updates and launched the 'Inside Feed' website detailing how systems work and changes are evaluated"
+          ]
+        },
+        {
+          "company": "MSD",
+          "page_range": [62, 62],
+          "industry": "Multinational pharmaceutical company",
+          "focus": "Stakeholder interaction and communication (in-house IT chatbot 'Jennie')",
+          "key_points": [
+            "UX team tested the human-AI interface and addressed usability problems pre-deployment, guided by three tenets",
+            "Understanding user's mental model: user research on expectations for chatbot interactions (scope of questions, expected/technical level of answers)",
+            "Human-centric approach: analysed employee interaction patterns (question formulation, satisfactory answer types, allowed retry attempts) to design information flow architecture",
+            "Managing bot-human handover: chatbot allowed a maximum of three attempts before forwarding request/chat logs to a customer care executive",
+            "Discloses on the landing page that Jennie is AI-powered and a beta version that will improve over time"
+          ]
+        }
+      ]
+    },
+    "conclusion": {
+      "page_range": [63, 63],
+      "paragraphs": {
+        "3.63": "The Model Framework is not complete/exhaustive and remains open to feedback. As AI technologies evolve, so will related ethical/governance issues; PDPC aims to periodically update the Model Framework based on feedback to keep it relevant and useful."
+      }
+    }
+  },
+  "annex_a_ai_ethical_principles": {
+    "page_range": [64, 66],
+    "description": "A compilation of foundational AI ethical principles distilled from various sources (IEEE Standards Association's Ethically Aligned Design; Software and Information Industry Association's Ethical Principles for AI and Data Analytics; Fairness, Accountability and Transparency in Machine Learning's Principles for Accountable Algorithms and a Social Impact Statement for Algorithms; European Commission's Building Trust in Human-Centric AI; OECD's Recommendation of the Council on AI; and industry consultation feedback). Not all principles are included/addressed in the Model Framework; organisations may incorporate relevant ones into their own corporate principles.",
+    "principles": [
+      {"number": 1, "name": "Accountability", "description": "Ensure AI actors are responsible and accountable for the proper functioning of AI systems and for respect of AI ethics/principles, based on their roles, context, and consistency with the state of the art."},
+      {"number": 2, "name": "Accuracy", "description": "Identify, log, and articulate sources of error and uncertainty throughout the algorithm and its data sources so expected/worst-case implications can be understood and inform mitigation procedures."},
+      {"number": 3, "name": "Auditability", "description": "Enable interested third parties to probe, understand, and review the behaviour of the algorithm through disclosure of information enabling monitoring, checking or criticism."},
+      {"number": 4, "name": "Explainability", "description": "Ensure automated/algorithmic decisions and associated data driving those decisions can be explained to end-users and other stakeholders in non-technical terms."},
+      {"number": 5, "name": "Fairness", "description": "(a) Ensure algorithmic decisions do not create discriminatory/unjust impacts across demographic lines (race, sex, etc.); (b) develop monitoring/accounting mechanisms to avoid unintentional discrimination; (c) consult diverse voices/demographics when developing systems/applications/algorithms."},
+      {"number": 6, "name": "Human Centricity and Well-being", "description": "(a) Aim for equitable distribution of data-practice benefits, avoiding disadvantaging vulnerable groups; (b) create greatest possible benefit from data/modelling techniques; (c) encourage virtues contributing to human flourishing, dignity, autonomy; (d) give weight to considered judgements of affected people/communities and align with their values; (e) cause no foreseeable harm, or minimise harm weighed against greater good; (f) allow users control over data use/context and ability to modify it; (g) ensure overall user well-being is central to AI system functionality."},
+      {"number": 7, "name": "Human rights alignment", "description": "Ensure design, development and implementation of technologies do not infringe internationally recognised human rights."},
+      {"number": 8, "name": "Inclusivity", "description": "Ensure that AI is accessible to all."},
+      {"number": 9, "name": "Progressiveness", "description": "Favour implementations where the value created is materially better than not engaging in that project."},
+      {"number": 10, "name": "Responsibility, accountability and transparency", "description": "(a) Build trust by ensuring designers/operators are responsible/accountable and systems operate transparently/fairly; (b) make available externally visible, impartial avenues of redress for adverse effects, with a designated responsible person/office; (c) incorporate downstream measures/processes for stakeholders to verify how/when AI technology is applied; (d) keep detailed records of design processes and decision-making."},
+      {"number": 11, "name": "Robustness and Security", "description": "AI systems should be safe and secure, not vulnerable to tampering or compromising the data they are trained on."},
+      {"number": 12, "name": "Sustainability", "description": "Favour implementations that effectively predict future behaviour and generate beneficial insights over a reasonable period of time."}
+    ]
+  },
+  "annex_b_algorithm_audits": {
+    "page_range": [67, 67],
+    "paragraphs": {
+      "1": "Algorithm audits are conducted only if necessary to discover the actual operations of algorithms in models, typically at the request of a regulator (as part of a forensic investigation) or by an AI technology provider assisting a customer organisation responding to a regulator. Requires technical expertise (possibly external experts); audit reports may be beyond most individuals'/organisations' understanding. Expense/time should be weighed against expected benefits; audits should be used when reasonably clear they will yield clear investigative benefits.",
+      "2_relevant_factors": [
+        {"factor": "Purpose", "description": "Consider whether information already available (product/service descriptions, system technical specifications, model training/selection records, data provenance record, audit trail) is sufficient and credible before embarking on an audit."},
+        {"factor": "Target audience of audit results", "description": "Expertise required varies by audience: individuals benefit most from decision-making process/data-use information; regulators should first examine data accountability and algorithm function information. An audit can prove how an AI model operates if there is reason to doubt the veracity/completeness of existing information."},
+        {"factor": "General data accountability", "description": "Organisations can provide information on data lineage (provenance record), data accuracy, bias minimisation, data splitting, data veracity, and review/update practices (all per the Data for Model Development section)."},
+        {"factor": "Commercially valuable information", "description": "Algorithms can be trade secrets or embody trade-secret business rules; if a technical audit is contemplated, corresponding mitigation measures (e.g., non-disclosure agreements) should be considered."}
+      ]
+    }
+  },
+  "acknowledgements": {
+    "page_range": [68, 68],
+    "description": "PDPC expresses appreciation to the following individuals/organisations for valuable feedback (alphabetical order):",
+    "contributors": [
+      "A*STAR", "Accenture", "AIG Asia Pacific Insurance Pte. Ltd.", "Apple",
+      "Asia Cloud Computing Association", "AsiaDPO", "BSA | The Software Alliance",
+      "Cambrian AI", "CUJO.AI", "Data Synergies", "DBS", "Element AI",
+      "Emerging Technologies Policy Forum", "Facebook", "Fountain Court Chambers",
+      "Google", "Grab", "Great Eastern", "GSK", "IBM Asia Pacific", "LawTech.Asia",
+      "Mastercard", "Microsoft Asia", "MSD International GmBH (Singapore branch)",
+      "Non-Profit Working Group on AI", "OCBC Bank", "PwC", "pymetrics", "Salesforce",
+      "Singtel", "Standard Chartered Bank", "Suade Labs", "Symphony AyasdiAI",
+      "Telenor Group", "Temasek International", "Tookitaki", "UCARE.AI", "Untangle AI"
+    ]
+  },
+  "illustrations_index": [
+    {"company": "CUJO AI", "topic": "Internal governance structures and measures", "page": 25},
+    {"company": "Mastercard", "topic": "Internal governance structures and measures", "page": 26},
+    {"company": "Suade Labs", "topic": "Determining level of human involvement in AI-augmented decision-making", "page": 33},
+    {"company": "Grab", "topic": "Determining level of human involvement in AI-augmented decision-making", "page": 34},
+    {"company": "Suade Labs", "topic": "Managing data for model development", "page": 41},
+    {"company": "pymetrics", "topic": "Managing biases in datasets for model development", "page": 42},
+    {"company": "Symphony AyasdiAI", "topic": "Documenting model development", "page": 52},
+    {"company": "Facebook", "topic": "Stakeholder interaction and communication", "page": 60},
+    {"company": "MSD", "topic": "Stakeholder interaction and communication (chatbot 'Jennie')", "page": 62}
+  ],
+  "key_terms_glossary": {
+    "AI": "Technologies simulating human traits (knowledge, reasoning, problem solving, perception, learning, planning) to produce an output/decision via AI algorithms and models.",
+    "AI Solution Providers": "Organisations developing AI solutions/application systems using AI technology.",
+    "Organisations": "Entities that adopt/deploy AI solutions in their operations.",
+    "Individuals": "Persons supplied with or who purchased AI products/services (consumers/customers).",
+    "Human-in-the-loop": "Human retains full control; AI only recommends/informs; decisions require affirmative human action.",
+    "Human-out-of-the-loop": "AI has full control without human override option.",
+    "Human-over-the-loop (human-on-the-loop)": "Human monitors/supervises and can take over control when needed; can adjust parameters during operation.",
+    "Explainability": "Ability to explain how an AI model functions and/or arrives at a prediction.",
+    "Repeatability": "Ability to consistently perform an action/decision given the same scenario (internal to the organisation).",
+    "Robustness": "Ability of a system to cope with errors/erroneous input and function correctly under stressful conditions.",
+    "Regular tuning": "Periodic refreshing of models based on updated training data to reflect changing behaviour/objectives/risks/values.",
+    "Traceability": "Documentation of AI decisions and the datasets/processes (data gathering, labelling, algorithms) that yield them, in an understandable way.",
+    "Reproducibility": "Ability of an independent verification team to produce the same results using the same AI method based on documentation (external to the organisation).",
+    "Auditability": "Readiness of an AI system to undergo assessment of its algorithms, data, and design processes by internal/external auditors.",
+    "Selection bias": "Data not fully representative of actual environment (includes omission bias and stereotype bias).",
+    "Measurement bias": "Data collection device causes systematic skew in a particular direction.",
+    "Data provenance record": "Record enabling an organisation to ascertain data quality based on origin/transformation, trace errors, update data, and attribute sources.",
+    "Acceptable User Policies (AUPs)": "Policies setting broad boundaries on user interactions with an AI system trained on real-life input data (active learning), preventing malicious manipulation.",
+    "FEAT Principles": "Monetary Authority of Singapore's 'Principles to Promote Fairness, Ethics, Accountability and Transparency in the Use of Artificial Intelligence and Data Analytics in Singapore's Financial Sector' (12 November 2018).",
+    "ISAGO": "Implementation and Self-Assessment Guide for Organisations, developed by IMDA/PDPC with the WEF Centre for the Fourth Industrial Revolution, complementary to the Model Framework.",
+    "PDPA": "Personal Data Protection Act 2012 (Singapore)."
+  }
+}

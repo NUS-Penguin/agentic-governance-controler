@@ -1,0 +1,6 @@
+sample_id,language,request_text,note
+SR-001,English,Connect Outlook to CRM.,Baseline English system integration request.
+SR-002,Mixed (English/Chinese),Connect Outlook 到 CRM.,Same request, code-switched with Chinese.
+SR-003,Japanese,Outlook を CRM に接続してください,Japanese phrasing of the same integration request.
+SR-004,Mixed (English/Chinese),Deploy Copilot 但是 keep manual approval,Illustrates automation with human review explicitly retained.
+SR-005,Mixed (English/Chinese),老板 wants GPT for customer support.,Executive-sponsored request referencing a GPT deployment.
