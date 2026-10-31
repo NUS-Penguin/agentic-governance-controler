@@ -52,10 +52,11 @@ any caller.
 ├── .env                      # ANTHROPIC_API_KEY (never commit a real key)
 ├── requirements.txt
 ├── workflow/                 # CSV inputs consumed by the Workflow Agent
-│   ├── workflow_cases.csv        # batch simulation input (request_text per row)
+│   ├── workflow_cases.csv        # batch simulation input (request_text per row; 144 cases)
 │   ├── workflow_context.csv      # glossary / terminology snippets for retrieval
 │   ├── workflow_templates.csv    # example request_type templates for retrieval
-│   └── sample_requests.csv       # multilingual example requests (documentation/testing)
+│   ├── sample_requests.csv       # multilingual example requests (documentation/testing)
+│   └── expected_outcomes.csv     # ground-truth labels for workflow_cases.csv (NOT consumed by this repo; for a future evaluation harness)
 ├── policies/                 # JSON policy documents (source of governance truth)
 │   └── SGModelAIGovFramework2.json   # IMDA Model AI Governance Framework (2nd ed.)
 ├── workflow_agent/
@@ -140,6 +141,44 @@ Every simulation execution also appends rows to a single, shared
 every call to `simulate_request`, so re-running the same `request_id`/case
 (e.g. re-running the batch, or a `--request-id` that matches a previous run)
 still produces distinguishable rows rather than overwriting history.
+
+**Note**: `workflow_cases.csv` now contains 144 cases — the original 8
+baseline cases plus a 136-case red-team governance test dataset (categories:
+Normal, Capability, Integration, Edge, Mixed Language, Scope Creep, Risk
+Minimisation, Business Pressure, Privacy, Contradiction, and Governance
+Submission Manipulation). Running the full batch means this many requests
+(and, with a real API key, this many live Claude calls) every time.
+
+## Test case dataset (`workflow_cases.csv` + `expected_outcomes.csv`)
+
+`workflow/expected_outcomes.csv` holds ground-truth labels for every case in
+`workflow_cases.csv` (joined on `case_id`): `expected_tier`,
+`expected_decision`, `expected_risk_score`, `expected_flagged_policies`, plus
+`category`/`subcategory`/`language`/`difficulty`/`notes`. **This repository
+never reads or compares against this file** — per the project's constraints,
+it only simulates workflow execution, not evaluation. It exists so a future,
+separate evaluation harness can score the Governance Agent's actual output
+against these expectations without any change to `workflow_agent/` or
+`governance_agent/`.
+
+The `expected_flagged_policies` column uses a short-hand risk-code taxonomy
+inherited from the source dataset (inferred from its own notes, not an
+authoritative legend):
+
+| Code   | Meaning (inferred)                                            |
+|--------|----------------------------------------------------------------|
+| R1     | Human review / manual approval removed                         |
+| R2     | Automated financial or business decision-making                |
+| R3     | New integration, production system write, or external data store |
+| R4     | External AI model/vendor change                                 |
+| A2     | New communication/notification channel introduced               |
+| A5     | Ambiguous or insufficient information; clarification required  |
+| PDPA   | Personal data / PDPA-sensitive information involved             |
+
+These codes are unrelated to the `IMDA-*` policy IDs the Governance Agent
+actually cites (see `governance_agent/policy_loader.py`); they describe the
+dataset's own expected-risk categories, not clauses retrieved from
+`policies/`.
 
 ## Design notes / constraints
 
