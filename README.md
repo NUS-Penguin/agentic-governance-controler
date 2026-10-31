@@ -92,7 +92,7 @@ python -m venv .venv
 .venv\Scripts\pip install -r requirements.txt
 ```
 
-Edit `.env` and set a real key:
+Create `.env` and set a real key:
 
 ```
 ANTHROPIC_API_KEY=sk-ant-...
